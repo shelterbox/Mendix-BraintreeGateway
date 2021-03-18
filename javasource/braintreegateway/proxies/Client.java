@@ -21,7 +21,8 @@ public class Client
 	public enum MemberNames
 	{
 		Token("Token"),
-		Nonce("Nonce");
+		Nonce("Nonce"),
+		DeviceData("DeviceData");
 
 		private java.lang.String metaName;
 
@@ -178,6 +179,42 @@ public class Client
 	public final void setNonce(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String nonce)
 	{
 		getMendixObject().setValue(context, MemberNames.Nonce.toString(), nonce);
+	}
+
+	/**
+	 * @return value of DeviceData
+	 */
+	public final java.lang.String getDeviceData()
+	{
+		return getDeviceData(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of DeviceData
+	 */
+	public final java.lang.String getDeviceData(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.DeviceData.toString());
+	}
+
+	/**
+	 * Set value of DeviceData
+	 * @param devicedata
+	 */
+	public final void setDeviceData(java.lang.String devicedata)
+	{
+		setDeviceData(getContext(), devicedata);
+	}
+
+	/**
+	 * Set value of DeviceData
+	 * @param context
+	 * @param devicedata
+	 */
+	public final void setDeviceData(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String devicedata)
+	{
+		getMendixObject().setValue(context, MemberNames.DeviceData.toString(), devicedata);
 	}
 
 	/**
