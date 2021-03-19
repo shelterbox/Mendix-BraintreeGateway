@@ -22,7 +22,8 @@ public class Client
 	{
 		Token("Token"),
 		Nonce("Nonce"),
-		DeviceData("DeviceData");
+		DeviceData("DeviceData"),
+		Amount("Amount");
 
 		private java.lang.String metaName;
 
@@ -215,6 +216,42 @@ public class Client
 	public final void setDeviceData(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String devicedata)
 	{
 		getMendixObject().setValue(context, MemberNames.DeviceData.toString(), devicedata);
+	}
+
+	/**
+	 * @return value of Amount
+	 */
+	public final java.math.BigDecimal getAmount()
+	{
+		return getAmount(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of Amount
+	 */
+	public final java.math.BigDecimal getAmount(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (java.math.BigDecimal) getMendixObject().getValue(context, MemberNames.Amount.toString());
+	}
+
+	/**
+	 * Set value of Amount
+	 * @param amount
+	 */
+	public final void setAmount(java.math.BigDecimal amount)
+	{
+		setAmount(getContext(), amount);
+	}
+
+	/**
+	 * Set value of Amount
+	 * @param context
+	 * @param amount
+	 */
+	public final void setAmount(com.mendix.systemwideinterfaces.core.IContext context, java.math.BigDecimal amount)
+	{
+		getMendixObject().setValue(context, MemberNames.Amount.toString(), amount);
 	}
 
 	/**
