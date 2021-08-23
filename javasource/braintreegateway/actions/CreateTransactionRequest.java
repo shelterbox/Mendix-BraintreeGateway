@@ -25,12 +25,13 @@ public class CreateTransactionRequest extends CustomJavaAction<java.lang.String>
 	private java.lang.Boolean SubmitForSettlement;
 	private java.lang.String FirstName;
 	private java.lang.String LastName;
+	private java.lang.String CountryCodeAlpha2;
 	private java.lang.String CountryCodeAlpha3;
 	private java.lang.String CountryName;
 	private java.lang.String StreetAddress;
 	private java.lang.String PostalCode;
 
-	public CreateTransactionRequest(IContext context, java.math.BigDecimal Amount, java.lang.String Nonce, java.lang.String DeviceData, java.lang.Boolean SubmitForSettlement, java.lang.String FirstName, java.lang.String LastName, java.lang.String CountryCodeAlpha3, java.lang.String CountryName, java.lang.String StreetAddress, java.lang.String PostalCode)
+	public CreateTransactionRequest(IContext context, java.math.BigDecimal Amount, java.lang.String Nonce, java.lang.String DeviceData, java.lang.Boolean SubmitForSettlement, java.lang.String FirstName, java.lang.String LastName, java.lang.String CountryCodeAlpha2, java.lang.String CountryCodeAlpha3, java.lang.String CountryName, java.lang.String StreetAddress, java.lang.String PostalCode)
 	{
 		super(context);
 		this.Amount = Amount;
@@ -39,6 +40,7 @@ public class CreateTransactionRequest extends CustomJavaAction<java.lang.String>
 		this.SubmitForSettlement = SubmitForSettlement;
 		this.FirstName = FirstName;
 		this.LastName = LastName;
+		this.CountryCodeAlpha2 = CountryCodeAlpha2;
 		this.CountryCodeAlpha3 = CountryCodeAlpha3;
 		this.CountryName = CountryName;
 		this.StreetAddress = StreetAddress;
@@ -56,6 +58,7 @@ public class CreateTransactionRequest extends CustomJavaAction<java.lang.String>
 				.billingAddress()
 					.firstName(this.FirstName)
 					.lastName(this.LastName)
+					.countryCodeAlpha2(this.CountryCodeAlpha2)
 					.countryCodeAlpha3(this.CountryCodeAlpha3)
 					.countryName(this.CountryName)
 					.streetAddress(this.StreetAddress)
