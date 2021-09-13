@@ -70,7 +70,7 @@ public class CreateTransactionRequest extends CustomJavaAction<java.lang.String>
 		
 		Result<Transaction> result = Payment.gateway.transaction().sale(request);
 		
-		if (!result.isSuccess()) throw new Error("Payment unsuccessfull");
+		if (!result.isSuccess()) throw new Exception("Payment unsuccessful: " +result.getMessage());
 		
 		return result.getTarget().getId();
 		// END USER CODE
