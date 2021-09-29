@@ -14,11 +14,6 @@ import com.mendix.systemwideinterfaces.core.IContext;
 public class Microflows
 {
 	// These are the microflows for the Testing module
-	public static void aCT_1_CreateBraintree(IContext context)
-	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		Core.microflowCall("Testing.ACT_1_CreateBraintree").withParams(params).execute(context);
-	}
 	public static void aCT_2_CapturePaymentDetails(IContext context)
 	{
 		Map<java.lang.String, Object> params = new HashMap<>();
@@ -29,5 +24,10 @@ public class Microflows
 		Map<java.lang.String, Object> params = new HashMap<>();
 		params.put("Client", _client == null ? null : _client.getMendixObject());
 		Core.microflowCall("Testing.ACT_3_ConfirmTransaction").withParams(params).execute(context);
+	}
+	public static boolean aS_1_CreateBraintree(IContext context)
+	{
+		Map<java.lang.String, Object> params = new HashMap<>();
+		return (java.lang.Boolean) Core.microflowCall("Testing.AS_1_CreateBraintree").withParams(params).execute(context);
 	}
 }
