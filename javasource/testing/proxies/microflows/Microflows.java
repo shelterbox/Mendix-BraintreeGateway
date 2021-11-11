@@ -25,6 +25,12 @@ public class Microflows
 		params.put("Client", _client == null ? null : _client.getMendixObject());
 		Core.microflowCall("Testing.ACT_3_ConfirmTransaction").withParams(params).execute(context);
 	}
+	public static void aCT_4_FindTransaction(IContext context, testing.proxies.TransactionSearch _transactionSearch)
+	{
+		Map<java.lang.String, Object> params = new HashMap<>();
+		params.put("TransactionSearch", _transactionSearch == null ? null : _transactionSearch.getMendixObject());
+		Core.microflowCall("Testing.ACT_4_FindTransaction").withParams(params).execute(context);
+	}
 	public static boolean aS_1_CreateBraintree(IContext context)
 	{
 		Map<java.lang.String, Object> params = new HashMap<>();

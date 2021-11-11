@@ -29,7 +29,7 @@ public class Microflows
 		IMendixObject result = (IMendixObject)Core.microflowCall("BraintreeGateway.SUB_CreateClient").withParams(params).execute(context);
 		return result == null ? null : braintreegateway.proxies.Client.initialize(context, result);
 	}
-	public static java.lang.String sUB_CreateTransaction(IContext context, braintreegateway.proxies.Client _client, java.lang.String _firstName, java.lang.String _lastName, java.lang.String _countryCodeAlpha3, java.lang.String _countryName, java.lang.String _streetAddress, java.lang.String _postalCode, java.lang.String _countryCodeAlpha2)
+	public static braintreegateway.proxies.Transaction sUB_CreateTransaction(IContext context, braintreegateway.proxies.Client _client, java.lang.String _firstName, java.lang.String _lastName, java.lang.String _countryCodeAlpha3, java.lang.String _countryName, java.lang.String _streetAddress, java.lang.String _postalCode, java.lang.String _countryCodeAlpha2)
 	{
 		Map<java.lang.String, Object> params = new HashMap<>();
 		params.put("Client", _client == null ? null : _client.getMendixObject());
@@ -40,6 +40,14 @@ public class Microflows
 		params.put("StreetAddress", _streetAddress);
 		params.put("PostalCode", _postalCode);
 		params.put("CountryCodeAlpha2", _countryCodeAlpha2);
-		return (java.lang.String) Core.microflowCall("BraintreeGateway.SUB_CreateTransaction").withParams(params).execute(context);
+		IMendixObject result = (IMendixObject)Core.microflowCall("BraintreeGateway.SUB_CreateTransaction").withParams(params).execute(context);
+		return result == null ? null : braintreegateway.proxies.Transaction.initialize(context, result);
+	}
+	public static braintreegateway.proxies.Transaction sUB_FindTransaction(IContext context, java.lang.String _transactionId)
+	{
+		Map<java.lang.String, Object> params = new HashMap<>();
+		params.put("TransactionId", _transactionId);
+		IMendixObject result = (IMendixObject)Core.microflowCall("BraintreeGateway.SUB_FindTransaction").withParams(params).execute(context);
+		return result == null ? null : braintreegateway.proxies.Transaction.initialize(context, result);
 	}
 }

@@ -9,14 +9,22 @@
 
 package braintreegateway.actions;
 
-import java.math.BigDecimal;
 import com.braintreegateway.Result;
 import com.braintreegateway.Transaction;
 import com.braintreegateway.TransactionRequest;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.webui.CustomJavaAction;
 import braintreegateway.actions.tools.Payment;
 
+/**
+ * Will return transaction JSON.
+ * 
+ * Use the 'BraintreeGateway.ImportMapping_Transaction' to import as Mendix objects.
+ * 
+ * More on the structure here:
+ * https://developer.paypal.com/braintree/docs/reference/response/transaction
+ */
 public class CreateTransactionRequest extends CustomJavaAction<java.lang.String>
 {
 	private java.math.BigDecimal Amount;
@@ -51,6 +59,7 @@ public class CreateTransactionRequest extends CustomJavaAction<java.lang.String>
 	public java.lang.String executeAction() throws Exception
 	{
 		// BEGIN USER CODE
+		//	Create transaction request	
 		TransactionRequest request = new TransactionRequest()
 				.amount(this.Amount)
 				.paymentMethodNonce(this.Nonce)
@@ -70,9 +79,12 @@ public class CreateTransactionRequest extends CustomJavaAction<java.lang.String>
 		
 		Result<Transaction> result = Payment.gateway.transaction().sale(request);
 		
-		if (!result.isSuccess()) throw new Exception("Payment unsuccessful: " +result.getMessage());
+		//	Throw error if the transaction was unsuccessful	
+		if (!result.isSuccess()) throw new Exception("Payment unsuccessful: " + result.getMessage());
 		
-		return result.getTarget().getId();
+		//	Return value as transaction JSON	
+		ObjectMapper mapper = new ObjectMapper();
+		return mapper.writeValueAsString(result.getTarget());
 		// END USER CODE
 	}
 

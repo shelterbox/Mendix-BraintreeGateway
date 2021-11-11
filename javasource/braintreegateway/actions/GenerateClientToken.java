@@ -13,6 +13,9 @@ import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.webui.CustomJavaAction;
 import braintreegateway.actions.tools.Payment;
 
+/**
+ * Will generate a client token for the Drop-in widget to use.
+ */
 public class GenerateClientToken extends CustomJavaAction<java.lang.String>
 {
 	private java.lang.String OptionalCustomerID;

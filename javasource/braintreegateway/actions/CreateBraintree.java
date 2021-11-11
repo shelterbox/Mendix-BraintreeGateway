@@ -16,7 +16,8 @@ import com.mendix.webui.CustomJavaAction;
 import braintreegateway.actions.tools.Payment;
 
 /**
- * This will initialise the Braintree gateway.
+ * Will initialise the Braintree gateway.
+ * 
  * With your supplied API crendentials, you can make subsequent calls to Braintree as 'you'.
  * 
  * More on the process here:
