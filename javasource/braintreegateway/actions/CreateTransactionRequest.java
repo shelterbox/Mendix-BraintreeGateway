@@ -28,31 +28,39 @@ import braintreegateway.actions.tools.Payment;
 public class CreateTransactionRequest extends CustomJavaAction<java.lang.String>
 {
 	private java.math.BigDecimal Amount;
-	private java.lang.String Nonce;
+	private java.lang.String PaymentMethodNonce;
 	private java.lang.String DeviceData;
 	private java.lang.Boolean SubmitForSettlement;
 	private java.lang.String FirstName;
 	private java.lang.String LastName;
+	private java.lang.String PhoneNumber;
+	private java.lang.String StreetAddress;
+	private java.lang.String ExtendedAddress;
+	private java.lang.String Locality;
+	private java.lang.String Region;
+	private java.lang.String PostalCode;
 	private java.lang.String CountryCodeAlpha2;
 	private java.lang.String CountryCodeAlpha3;
 	private java.lang.String CountryName;
-	private java.lang.String StreetAddress;
-	private java.lang.String PostalCode;
 
-	public CreateTransactionRequest(IContext context, java.math.BigDecimal Amount, java.lang.String Nonce, java.lang.String DeviceData, java.lang.Boolean SubmitForSettlement, java.lang.String FirstName, java.lang.String LastName, java.lang.String CountryCodeAlpha2, java.lang.String CountryCodeAlpha3, java.lang.String CountryName, java.lang.String StreetAddress, java.lang.String PostalCode)
+	public CreateTransactionRequest(IContext context, java.math.BigDecimal Amount, java.lang.String PaymentMethodNonce, java.lang.String DeviceData, java.lang.Boolean SubmitForSettlement, java.lang.String FirstName, java.lang.String LastName, java.lang.String PhoneNumber, java.lang.String StreetAddress, java.lang.String ExtendedAddress, java.lang.String Locality, java.lang.String Region, java.lang.String PostalCode, java.lang.String CountryCodeAlpha2, java.lang.String CountryCodeAlpha3, java.lang.String CountryName)
 	{
 		super(context);
 		this.Amount = Amount;
-		this.Nonce = Nonce;
+		this.PaymentMethodNonce = PaymentMethodNonce;
 		this.DeviceData = DeviceData;
 		this.SubmitForSettlement = SubmitForSettlement;
 		this.FirstName = FirstName;
 		this.LastName = LastName;
+		this.PhoneNumber = PhoneNumber;
+		this.StreetAddress = StreetAddress;
+		this.ExtendedAddress = ExtendedAddress;
+		this.Locality = Locality;
+		this.Region = Region;
+		this.PostalCode = PostalCode;
 		this.CountryCodeAlpha2 = CountryCodeAlpha2;
 		this.CountryCodeAlpha3 = CountryCodeAlpha3;
 		this.CountryName = CountryName;
-		this.StreetAddress = StreetAddress;
-		this.PostalCode = PostalCode;
 	}
 
 	@java.lang.Override
@@ -62,16 +70,20 @@ public class CreateTransactionRequest extends CustomJavaAction<java.lang.String>
 		//	Create transaction request	
 		TransactionRequest request = new TransactionRequest()
 				.amount(this.Amount)
-				.paymentMethodNonce(this.Nonce)
+				.paymentMethodNonce(this.PaymentMethodNonce)
 				.deviceData(this.DeviceData)
 				.billingAddress()
 					.firstName(this.FirstName)
 					.lastName(this.LastName)
+					.phoneNumber(this.PhoneNumber)
+					.streetAddress(this.StreetAddress)
+					.extendedAddress(this.ExtendedAddress)
+					.locality(this.Locality)
+					.region(this.Region)
+					.postalCode(this.PostalCode)
 					.countryCodeAlpha2(this.CountryCodeAlpha2)
 					.countryCodeAlpha3(this.CountryCodeAlpha3)
 					.countryName(this.CountryName)
-					.streetAddress(this.StreetAddress)
-					.postalCode(this.PostalCode)
 					.done()
 				.options()
 					.submitForSettlement(this.SubmitForSettlement)
@@ -83,7 +95,7 @@ public class CreateTransactionRequest extends CustomJavaAction<java.lang.String>
 		if (!result.isSuccess()) throw new Exception("Payment unsuccessful: " + result.getMessage());
 		
 		//	Return value as transaction JSON	
-		ObjectMapper mapper = new ObjectMapper();
+		ObjectMapper mapper = new ObjectMapper();		
 		return mapper.writeValueAsString(result.getTarget());
 		// END USER CODE
 	}

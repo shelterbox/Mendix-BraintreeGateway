@@ -18,19 +18,19 @@ import braintreegateway.actions.tools.Payment;
  */
 public class GenerateClientToken extends CustomJavaAction<java.lang.String>
 {
-	private java.lang.String OptionalCustomerID;
+	private java.lang.String CustomerID;
 
-	public GenerateClientToken(IContext context, java.lang.String OptionalCustomerID)
+	public GenerateClientToken(IContext context, java.lang.String CustomerID)
 	{
 		super(context);
-		this.OptionalCustomerID = OptionalCustomerID;
+		this.CustomerID = CustomerID;
 	}
 
 	@java.lang.Override
 	public java.lang.String executeAction() throws Exception
 	{
 		// BEGIN USER CODE
-		if (this.OptionalCustomerID != null) return Payment.generateClientToken(this.OptionalCustomerID);
+		if (this.CustomerID != null) return Payment.generateClientToken(this.CustomerID);
 		else return Payment.generateClientToken();
 		// END USER CODE
 	}

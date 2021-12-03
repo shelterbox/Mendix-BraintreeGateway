@@ -23,12 +23,12 @@ import braintreegateway.actions.tools.Payment;
  */
 public class FindTransaction extends CustomJavaAction<java.lang.String>
 {
-	private java.lang.String TransactionId;
+	private java.lang.String _ID;
 
-	public FindTransaction(IContext context, java.lang.String TransactionId)
+	public FindTransaction(IContext context, java.lang.String _ID)
 	{
 		super(context);
-		this.TransactionId = TransactionId;
+		this._ID = _ID;
 	}
 
 	@java.lang.Override
@@ -36,7 +36,7 @@ public class FindTransaction extends CustomJavaAction<java.lang.String>
 	{
 		// BEGIN USER CODE
 		// Find the transaction
-		Transaction transaction = Payment.gateway.transaction().find(TransactionId);
+		Transaction transaction = Payment.gateway.transaction().find(this._ID);
 		
 		// Return value as transaction JSON	
 		ObjectMapper mapper = new ObjectMapper();
