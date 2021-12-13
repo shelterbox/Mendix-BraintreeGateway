@@ -50,31 +50,10 @@ public class Microflows
 		IMendixObject result = (IMendixObject)Core.microflowCall("Testing.DS_2_CapturePaymentDetails").withParams(params).execute(context);
 		return result == null ? null : braintreegateway.proxies.Client.initialize(context, result);
 	}
-	public static testing.proxies.Address dS_Address(IContext context, testing.proxies.Person _person)
-	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		params.put("Person", _person == null ? null : _person.getMendixObject());
-		IMendixObject result = (IMendixObject)Core.microflowCall("Testing.DS_Address").withParams(params).execute(context);
-		return result == null ? null : testing.proxies.Address.initialize(context, result);
-	}
-	public static testing.proxies.Email dS_Email(IContext context, testing.proxies.Person _person)
-	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		params.put("Person", _person == null ? null : _person.getMendixObject());
-		IMendixObject result = (IMendixObject)Core.microflowCall("Testing.DS_Email").withParams(params).execute(context);
-		return result == null ? null : testing.proxies.Email.initialize(context, result);
-	}
 	public static testing.proxies.Person dS_Person(IContext context)
 	{
 		Map<java.lang.String, Object> params = new HashMap<>();
 		IMendixObject result = (IMendixObject)Core.microflowCall("Testing.DS_Person").withParams(params).execute(context);
 		return result == null ? null : testing.proxies.Person.initialize(context, result);
-	}
-	public static testing.proxies.Phone dS_Phone(IContext context, testing.proxies.Person _person)
-	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		params.put("Person", _person == null ? null : _person.getMendixObject());
-		IMendixObject result = (IMendixObject)Core.microflowCall("Testing.DS_Phone").withParams(params).execute(context);
-		return result == null ? null : testing.proxies.Phone.initialize(context, result);
 	}
 }

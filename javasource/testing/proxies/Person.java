@@ -21,7 +21,13 @@ public class Person
 	public enum MemberNames
 	{
 		FirstName("FirstName"),
-		LastName("LastName");
+		LastName("LastName"),
+		EmailAddress("EmailAddress"),
+		PhoneNumber("PhoneNumber"),
+		Postcode("Postcode"),
+		Address("Address"),
+		Town("Town"),
+		Person_Country("Testing.Person_Country");
 
 		private java.lang.String metaName;
 
@@ -178,6 +184,229 @@ public class Person
 	public final void setLastName(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String lastname)
 	{
 		getMendixObject().setValue(context, MemberNames.LastName.toString(), lastname);
+	}
+
+	/**
+	 * @return value of EmailAddress
+	 */
+	public final java.lang.String getEmailAddress()
+	{
+		return getEmailAddress(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of EmailAddress
+	 */
+	public final java.lang.String getEmailAddress(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.EmailAddress.toString());
+	}
+
+	/**
+	 * Set value of EmailAddress
+	 * @param emailaddress
+	 */
+	public final void setEmailAddress(java.lang.String emailaddress)
+	{
+		setEmailAddress(getContext(), emailaddress);
+	}
+
+	/**
+	 * Set value of EmailAddress
+	 * @param context
+	 * @param emailaddress
+	 */
+	public final void setEmailAddress(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String emailaddress)
+	{
+		getMendixObject().setValue(context, MemberNames.EmailAddress.toString(), emailaddress);
+	}
+
+	/**
+	 * @return value of PhoneNumber
+	 */
+	public final java.lang.String getPhoneNumber()
+	{
+		return getPhoneNumber(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of PhoneNumber
+	 */
+	public final java.lang.String getPhoneNumber(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.PhoneNumber.toString());
+	}
+
+	/**
+	 * Set value of PhoneNumber
+	 * @param phonenumber
+	 */
+	public final void setPhoneNumber(java.lang.String phonenumber)
+	{
+		setPhoneNumber(getContext(), phonenumber);
+	}
+
+	/**
+	 * Set value of PhoneNumber
+	 * @param context
+	 * @param phonenumber
+	 */
+	public final void setPhoneNumber(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String phonenumber)
+	{
+		getMendixObject().setValue(context, MemberNames.PhoneNumber.toString(), phonenumber);
+	}
+
+	/**
+	 * @return value of Postcode
+	 */
+	public final java.lang.String getPostcode()
+	{
+		return getPostcode(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of Postcode
+	 */
+	public final java.lang.String getPostcode(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.Postcode.toString());
+	}
+
+	/**
+	 * Set value of Postcode
+	 * @param postcode
+	 */
+	public final void setPostcode(java.lang.String postcode)
+	{
+		setPostcode(getContext(), postcode);
+	}
+
+	/**
+	 * Set value of Postcode
+	 * @param context
+	 * @param postcode
+	 */
+	public final void setPostcode(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String postcode)
+	{
+		getMendixObject().setValue(context, MemberNames.Postcode.toString(), postcode);
+	}
+
+	/**
+	 * @return value of Address
+	 */
+	public final java.lang.String getAddress()
+	{
+		return getAddress(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of Address
+	 */
+	public final java.lang.String getAddress(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.Address.toString());
+	}
+
+	/**
+	 * Set value of Address
+	 * @param address
+	 */
+	public final void setAddress(java.lang.String address)
+	{
+		setAddress(getContext(), address);
+	}
+
+	/**
+	 * Set value of Address
+	 * @param context
+	 * @param address
+	 */
+	public final void setAddress(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String address)
+	{
+		getMendixObject().setValue(context, MemberNames.Address.toString(), address);
+	}
+
+	/**
+	 * @return value of Town
+	 */
+	public final java.lang.String getTown()
+	{
+		return getTown(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of Town
+	 */
+	public final java.lang.String getTown(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.Town.toString());
+	}
+
+	/**
+	 * Set value of Town
+	 * @param town
+	 */
+	public final void setTown(java.lang.String town)
+	{
+		setTown(getContext(), town);
+	}
+
+	/**
+	 * Set value of Town
+	 * @param context
+	 * @param town
+	 */
+	public final void setTown(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String town)
+	{
+		getMendixObject().setValue(context, MemberNames.Town.toString(), town);
+	}
+
+	/**
+	 * @return value of Person_Country
+	 */
+	public final testing.proxies.Country getPerson_Country() throws com.mendix.core.CoreException
+	{
+		return getPerson_Country(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of Person_Country
+	 */
+	public final testing.proxies.Country getPerson_Country(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
+	{
+		testing.proxies.Country result = null;
+		com.mendix.systemwideinterfaces.core.IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.Person_Country.toString());
+		if (identifier != null)
+			result = testing.proxies.Country.load(context, identifier);
+		return result;
+	}
+
+	/**
+	 * Set value of Person_Country
+	 * @param person_country
+	 */
+	public final void setPerson_Country(testing.proxies.Country person_country)
+	{
+		setPerson_Country(getContext(), person_country);
+	}
+
+	/**
+	 * Set value of Person_Country
+	 * @param context
+	 * @param person_country
+	 */
+	public final void setPerson_Country(com.mendix.systemwideinterfaces.core.IContext context, testing.proxies.Country person_country)
+	{
+		if (person_country == null)
+			getMendixObject().setValue(context, MemberNames.Person_Country.toString(), null);
+		else
+			getMendixObject().setValue(context, MemberNames.Person_Country.toString(), person_country.getMendixObject().getId());
 	}
 
 	/**

@@ -75,7 +75,7 @@ public class CreateTransactionRequest extends CustomJavaAction<java.lang.String>
 				.billingAddress()
 					.firstName(this.FirstName)
 					.lastName(this.LastName)
-					.phoneNumber(this.PhoneNumber)
+					.phoneNumber(this.PhoneNumber.replaceAll("[^0-9]", "")) // Replace all non-numeric
 					.streetAddress(this.StreetAddress)
 					.extendedAddress(this.ExtendedAddress)
 					.locality(this.Locality)
