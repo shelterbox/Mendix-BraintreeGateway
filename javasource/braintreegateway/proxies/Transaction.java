@@ -78,7 +78,8 @@ public class Transaction
 		ShippingAddress_Transaction("BraintreeGateway.ShippingAddress_Transaction"),
 		SubscriptionDetails_Transaction("BraintreeGateway.SubscriptionDetails_Transaction"),
 		RiskData_Transaction("BraintreeGateway.RiskData_Transaction"),
-		PayPalDetails_Transaction("BraintreeGateway.PayPalDetails_Transaction");
+		PayPalDetails_Transaction("BraintreeGateway.PayPalDetails_Transaction"),
+		ThreeDSecureInfo_Transaction("BraintreeGateway.ThreeDSecureInfo_Transaction");
 
 		private java.lang.String metaName;
 
@@ -2357,6 +2358,49 @@ public class Transaction
 			getMendixObject().setValue(context, MemberNames.PayPalDetails_Transaction.toString(), null);
 		else
 			getMendixObject().setValue(context, MemberNames.PayPalDetails_Transaction.toString(), paypaldetails_transaction.getMendixObject().getId());
+	}
+
+	/**
+	 * @return value of ThreeDSecureInfo_Transaction
+	 */
+	public final braintreegateway.proxies.ThreeDSecureInfo getThreeDSecureInfo_Transaction() throws com.mendix.core.CoreException
+	{
+		return getThreeDSecureInfo_Transaction(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of ThreeDSecureInfo_Transaction
+	 */
+	public final braintreegateway.proxies.ThreeDSecureInfo getThreeDSecureInfo_Transaction(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
+	{
+		braintreegateway.proxies.ThreeDSecureInfo result = null;
+		com.mendix.systemwideinterfaces.core.IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.ThreeDSecureInfo_Transaction.toString());
+		if (identifier != null)
+			result = braintreegateway.proxies.ThreeDSecureInfo.load(context, identifier);
+		return result;
+	}
+
+	/**
+	 * Set value of ThreeDSecureInfo_Transaction
+	 * @param threedsecureinfo_transaction
+	 */
+	public final void setThreeDSecureInfo_Transaction(braintreegateway.proxies.ThreeDSecureInfo threedsecureinfo_transaction)
+	{
+		setThreeDSecureInfo_Transaction(getContext(), threedsecureinfo_transaction);
+	}
+
+	/**
+	 * Set value of ThreeDSecureInfo_Transaction
+	 * @param context
+	 * @param threedsecureinfo_transaction
+	 */
+	public final void setThreeDSecureInfo_Transaction(com.mendix.systemwideinterfaces.core.IContext context, braintreegateway.proxies.ThreeDSecureInfo threedsecureinfo_transaction)
+	{
+		if (threedsecureinfo_transaction == null)
+			getMendixObject().setValue(context, MemberNames.ThreeDSecureInfo_Transaction.toString(), null);
+		else
+			getMendixObject().setValue(context, MemberNames.ThreeDSecureInfo_Transaction.toString(), threedsecureinfo_transaction.getMendixObject().getId());
 	}
 
 	/**
