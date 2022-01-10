@@ -5,9 +5,20 @@ This module is used to intergrate Braintree into Mendix. It requires the [Mendix
  - [Useful links](#useful-links-)
 
 ## How to setup 🔧
-1. You need to initialise the connection to Braintree with the 'CreateBraintree' Java action. Fill out your Merchant ID, public key and private key as well as the environment you want to run on. Run this action when your Mendix application starts.
-2. Use the 'SUB_CreateClient' microflow to create a client instance. You can optionally pass a customer ID to use an existing payment method for a returning customer.
-3. Finally use the 'SUB_CreateTransaction' microflow to create a transaction. Pass the amount and billing address.
+### Server
+1. Fill out the API constants:
+     - Environment > ``BraintreeEnvironment``
+     - Merchant ID > ``BraintreeMerchantID``
+     - Private key > ``BraintreePrivateKey``
+     - Public key > ``BraintreePublicKey``
+2. Add the ``AS_CreateBraintree`` microflow action to application startup. This will initialise the API connection.
+3. Use the ``SUB_CreateClient`` microflow to create a client instance. You can optionally pass a ``CustomerID`` to display vaulted payment methods for that customer.
+4. Finally use the ``SUB_CreateTransaction`` microflow to create a transaction. Pass the client data and billing address.
+
+### Client
+1. Create a page with ``Client`` entity as the dataview.
+2. Drop the Drop-in widget into the dataview.
+3. Configure the widget properties.
 
 ## Useful links 🔗
  - [Getting started](https://developers.braintreepayments.com/start/overview)
