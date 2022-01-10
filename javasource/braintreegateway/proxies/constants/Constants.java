@@ -11,7 +11,7 @@ public class Constants
 	// These are the constants for the BraintreeGateway module
 
 	/**
-	* Select from the following options (all in lower case):
+	* Select from the following options:
 	* sandbox
 	* production
 	* qa

@@ -20,6 +20,7 @@ public class Transaction
 	 */
 	public enum MemberNames
 	{
+		RawJSON("RawJSON"),
 		Amount("Amount"),
 		AvsErrorResponseCode("AvsErrorResponseCode"),
 		AvsPostalCodeResponseCode("AvsPostalCodeResponseCode"),
@@ -166,6 +167,42 @@ public class Transaction
 	{
 		com.mendix.core.Core.delete(context, getMendixObject());
 	}
+	/**
+	 * @return value of RawJSON
+	 */
+	public final java.lang.String getRawJSON()
+	{
+		return getRawJSON(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of RawJSON
+	 */
+	public final java.lang.String getRawJSON(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.RawJSON.toString());
+	}
+
+	/**
+	 * Set value of RawJSON
+	 * @param rawjson
+	 */
+	public final void setRawJSON(java.lang.String rawjson)
+	{
+		setRawJSON(getContext(), rawjson);
+	}
+
+	/**
+	 * Set value of RawJSON
+	 * @param context
+	 * @param rawjson
+	 */
+	public final void setRawJSON(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String rawjson)
+	{
+		getMendixObject().setValue(context, MemberNames.RawJSON.toString(), rawjson);
+	}
+
 	/**
 	 * @return value of Amount
 	 */

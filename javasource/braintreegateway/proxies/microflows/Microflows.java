@@ -15,6 +15,11 @@ import com.mendix.systemwideinterfaces.core.IMendixObject;
 public class Microflows
 {
 	// These are the microflows for the BraintreeGateway module
+	public static boolean aS_CreateBraintree(IContext context)
+	{
+		Map<java.lang.String, Object> params = new HashMap<>();
+		return (java.lang.Boolean) Core.microflowCall("BraintreeGateway.AS_CreateBraintree").withParams(params).execute(context);
+	}
 	public static braintreegateway.proxies.Enum_Environment dS_Braintree_Environment(IContext context)
 	{
 		Map<java.lang.String, Object> params = new HashMap<>();

@@ -23,7 +23,8 @@ public class Client
 		Token("Token"),
 		Nonce("Nonce"),
 		DeviceData("DeviceData"),
-		Amount("Amount");
+		Amount("Amount"),
+		Client_Payment("BraintreeGateway.Client_Payment");
 
 		private java.lang.String metaName;
 
@@ -252,6 +253,49 @@ public class Client
 	public final void setAmount(com.mendix.systemwideinterfaces.core.IContext context, java.math.BigDecimal amount)
 	{
 		getMendixObject().setValue(context, MemberNames.Amount.toString(), amount);
+	}
+
+	/**
+	 * @return value of Client_Payment
+	 */
+	public final testing.proxies.Payment getClient_Payment() throws com.mendix.core.CoreException
+	{
+		return getClient_Payment(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of Client_Payment
+	 */
+	public final testing.proxies.Payment getClient_Payment(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
+	{
+		testing.proxies.Payment result = null;
+		com.mendix.systemwideinterfaces.core.IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.Client_Payment.toString());
+		if (identifier != null)
+			result = testing.proxies.Payment.load(context, identifier);
+		return result;
+	}
+
+	/**
+	 * Set value of Client_Payment
+	 * @param client_payment
+	 */
+	public final void setClient_Payment(testing.proxies.Payment client_payment)
+	{
+		setClient_Payment(getContext(), client_payment);
+	}
+
+	/**
+	 * Set value of Client_Payment
+	 * @param context
+	 * @param client_payment
+	 */
+	public final void setClient_Payment(com.mendix.systemwideinterfaces.core.IContext context, testing.proxies.Payment client_payment)
+	{
+		if (client_payment == null)
+			getMendixObject().setValue(context, MemberNames.Client_Payment.toString(), null);
+		else
+			getMendixObject().setValue(context, MemberNames.Client_Payment.toString(), client_payment.getMendixObject().getId());
 	}
 
 	/**

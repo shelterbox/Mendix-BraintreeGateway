@@ -83,6 +83,14 @@ public class Person
 		return testing.proxies.Person.initialize(context, mendixObject);
 	}
 
+	public static java.util.List<testing.proxies.Person> load(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String xpathConstraint) throws com.mendix.core.CoreException
+	{
+		java.util.List<testing.proxies.Person> result = new java.util.ArrayList<testing.proxies.Person>();
+		for (com.mendix.systemwideinterfaces.core.IMendixObject obj : com.mendix.core.Core.retrieveXPathQuery(context, "//Testing.Person" + xpathConstraint))
+			result.add(testing.proxies.Person.initialize(context, obj));
+		return result;
+	}
+
 	/**
 	 * Commit the changes made on this proxy object.
 	 */
