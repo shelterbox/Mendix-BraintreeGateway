@@ -36,4 +36,9 @@ public class Constants
 	{
 		return (java.lang.String)Core.getConfiguration().getConstantValue("BraintreeGateway.BraintreePublicKey");
 	}
+
+	public static java.lang.String getGooglePayMerchantID()
+	{
+		return (java.lang.String)Core.getConfiguration().getConstantValue("BraintreeGateway.GooglePayMerchantID");
+	}
 }
