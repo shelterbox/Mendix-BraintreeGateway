@@ -24,6 +24,8 @@ public class Client
 		Nonce("Nonce"),
 		DeviceData("DeviceData"),
 		Amount("Amount"),
+		CurrencyCode("CurrencyCode"),
+		CountryCode("CountryCode"),
 		Client_Payment("BraintreeGateway.Client_Payment");
 
 		private java.lang.String metaName;
@@ -253,6 +255,78 @@ public class Client
 	public final void setAmount(com.mendix.systemwideinterfaces.core.IContext context, java.math.BigDecimal amount)
 	{
 		getMendixObject().setValue(context, MemberNames.Amount.toString(), amount);
+	}
+
+	/**
+	 * @return value of CurrencyCode
+	 */
+	public final java.lang.String getCurrencyCode()
+	{
+		return getCurrencyCode(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of CurrencyCode
+	 */
+	public final java.lang.String getCurrencyCode(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.CurrencyCode.toString());
+	}
+
+	/**
+	 * Set value of CurrencyCode
+	 * @param currencycode
+	 */
+	public final void setCurrencyCode(java.lang.String currencycode)
+	{
+		setCurrencyCode(getContext(), currencycode);
+	}
+
+	/**
+	 * Set value of CurrencyCode
+	 * @param context
+	 * @param currencycode
+	 */
+	public final void setCurrencyCode(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String currencycode)
+	{
+		getMendixObject().setValue(context, MemberNames.CurrencyCode.toString(), currencycode);
+	}
+
+	/**
+	 * @return value of CountryCode
+	 */
+	public final java.lang.String getCountryCode()
+	{
+		return getCountryCode(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of CountryCode
+	 */
+	public final java.lang.String getCountryCode(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.CountryCode.toString());
+	}
+
+	/**
+	 * Set value of CountryCode
+	 * @param countrycode
+	 */
+	public final void setCountryCode(java.lang.String countrycode)
+	{
+		setCountryCode(getContext(), countrycode);
+	}
+
+	/**
+	 * Set value of CountryCode
+	 * @param context
+	 * @param countrycode
+	 */
+	public final void setCountryCode(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String countrycode)
+	{
+		getMendixObject().setValue(context, MemberNames.CountryCode.toString(), countrycode);
 	}
 
 	/**

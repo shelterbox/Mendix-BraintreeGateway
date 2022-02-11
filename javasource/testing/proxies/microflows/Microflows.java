@@ -15,11 +15,11 @@ import com.mendix.systemwideinterfaces.core.IMendixObject;
 public class Microflows
 {
 	// These are the microflows for the Testing module
-	public static void aCT_ConfirmTransaction(IContext context, braintreegateway.proxies.Client _client, testing.proxies.Person _person)
+	public static void aCT_ConfirmTransaction(IContext context, braintreegateway.proxies.Client _client, testing.proxies.Payment _payment)
 	{
 		Map<java.lang.String, Object> params = new HashMap<>();
 		params.put("Client", _client == null ? null : _client.getMendixObject());
-		params.put("Person", _person == null ? null : _person.getMendixObject());
+		params.put("Payment", _payment == null ? null : _payment.getMendixObject());
 		Core.microflowCall("Testing.ACT_ConfirmTransaction").withParams(params).execute(context);
 	}
 	public static void aCT_FindTransaction(IContext context, testing.proxies.TransactionSearch _transactionSearch)
@@ -37,6 +37,19 @@ public class Microflows
 	{
 		Map<java.lang.String, Object> params = new HashMap<>();
 		Core.microflowCall("Testing.AS_Country_Import").withParams(params).execute(context);
+	}
+	public static java.util.List<testing.proxies.Configuration> configuration(IContext context)
+	{
+		Map<java.lang.String, Object> params = new HashMap<>();
+		java.util.List<IMendixObject> objs = Core.microflowCall("Testing.Configuration").withParams(params).execute(context);
+		java.util.List<testing.proxies.Configuration> result = null;
+		if (objs != null)
+		{
+			result = new java.util.ArrayList<>();
+			for (IMendixObject obj : objs)
+				result.add(testing.proxies.Configuration.initialize(context, obj));
+		}
+		return result;
 	}
 	public static testing.proxies.Payment dS_Payment_Random(IContext context, testing.proxies.Person _person)
 	{

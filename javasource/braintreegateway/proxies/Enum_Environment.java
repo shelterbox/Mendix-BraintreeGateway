@@ -6,10 +6,10 @@ package braintreegateway.proxies;
 
 public enum Enum_Environment
 {
-	development(new java.lang.String[][] { new java.lang.String[] { "en_US", "" }, new java.lang.String[] { "en_GB", "Development" } }),
-	production(new java.lang.String[][] { new java.lang.String[] { "en_US", "" }, new java.lang.String[] { "en_GB", "Production" } }),
-	qa(new java.lang.String[][] { new java.lang.String[] { "en_US", "" }, new java.lang.String[] { "en_GB", "QA" } }),
-	sandbox(new java.lang.String[][] { new java.lang.String[] { "en_US", "" }, new java.lang.String[] { "en_GB", "Sandbox" } });
+	production(new java.lang.String[][] { new java.lang.String[] { "en_US", "" }, new java.lang.String[] { "en_GB", "production" } }),
+	sandbox(new java.lang.String[][] { new java.lang.String[] { "en_US", "" }, new java.lang.String[] { "en_GB", "sandbox" } }),
+	development(new java.lang.String[][] { new java.lang.String[] { "en_US", "" }, new java.lang.String[] { "en_GB", "development" } }),
+	qa(new java.lang.String[][] { new java.lang.String[] { "en_US", "" }, new java.lang.String[] { "en_GB", "qa" } });
 
 	private java.util.Map<java.lang.String, java.lang.String> captions;
 

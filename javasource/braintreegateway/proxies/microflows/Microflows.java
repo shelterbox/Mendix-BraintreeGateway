@@ -26,11 +26,13 @@ public class Microflows
 		java.lang.String result = (java.lang.String) Core.microflowCall("BraintreeGateway.DS_Braintree_Environment").withParams(params).execute(context);
 		return result == null ? null : braintreegateway.proxies.Enum_Environment.valueOf(result);
 	}
-	public static braintreegateway.proxies.Client sUB_CreateClient(IContext context, java.lang.String _optionalCustomerID, java.math.BigDecimal _amount)
+	public static braintreegateway.proxies.Client sUB_CreateClient(IContext context, java.lang.String _optionalCustomerID, java.math.BigDecimal _amount, java.lang.String _currencyCode, java.lang.String _countryCode)
 	{
 		Map<java.lang.String, Object> params = new HashMap<>();
 		params.put("OptionalCustomerID", _optionalCustomerID);
 		params.put("Amount", _amount);
+		params.put("CurrencyCode", _currencyCode);
+		params.put("CountryCode", _countryCode);
 		IMendixObject result = (IMendixObject)Core.microflowCall("BraintreeGateway.SUB_CreateClient").withParams(params).execute(context);
 		return result == null ? null : braintreegateway.proxies.Client.initialize(context, result);
 	}
