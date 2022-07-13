@@ -24,8 +24,11 @@ public class Person
 		LastName("LastName"),
 		EmailAddress("EmailAddress"),
 		PhoneNumber("PhoneNumber"),
+		Company("Company"),
 		Postcode("Postcode"),
-		Address("Address"),
+		AddressLine1("AddressLine1"),
+		AddressLine2("AddressLine2"),
+		AddressLine3("AddressLine3"),
 		Town("Town"),
 		Person_Country("Testing.Person_Country");
 
@@ -267,6 +270,42 @@ public class Person
 	}
 
 	/**
+	 * @return value of Company
+	 */
+	public final java.lang.String getCompany()
+	{
+		return getCompany(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of Company
+	 */
+	public final java.lang.String getCompany(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.Company.toString());
+	}
+
+	/**
+	 * Set value of Company
+	 * @param company
+	 */
+	public final void setCompany(java.lang.String company)
+	{
+		setCompany(getContext(), company);
+	}
+
+	/**
+	 * Set value of Company
+	 * @param context
+	 * @param company
+	 */
+	public final void setCompany(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String company)
+	{
+		getMendixObject().setValue(context, MemberNames.Company.toString(), company);
+	}
+
+	/**
 	 * @return value of Postcode
 	 */
 	public final java.lang.String getPostcode()
@@ -303,39 +342,111 @@ public class Person
 	}
 
 	/**
-	 * @return value of Address
+	 * @return value of AddressLine1
 	 */
-	public final java.lang.String getAddress()
+	public final java.lang.String getAddressLine1()
 	{
-		return getAddress(getContext());
+		return getAddressLine1(getContext());
 	}
 
 	/**
 	 * @param context
-	 * @return value of Address
+	 * @return value of AddressLine1
 	 */
-	public final java.lang.String getAddress(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.String getAddressLine1(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (java.lang.String) getMendixObject().getValue(context, MemberNames.Address.toString());
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.AddressLine1.toString());
 	}
 
 	/**
-	 * Set value of Address
-	 * @param address
+	 * Set value of AddressLine1
+	 * @param addressline1
 	 */
-	public final void setAddress(java.lang.String address)
+	public final void setAddressLine1(java.lang.String addressline1)
 	{
-		setAddress(getContext(), address);
+		setAddressLine1(getContext(), addressline1);
 	}
 
 	/**
-	 * Set value of Address
+	 * Set value of AddressLine1
 	 * @param context
-	 * @param address
+	 * @param addressline1
 	 */
-	public final void setAddress(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String address)
+	public final void setAddressLine1(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String addressline1)
 	{
-		getMendixObject().setValue(context, MemberNames.Address.toString(), address);
+		getMendixObject().setValue(context, MemberNames.AddressLine1.toString(), addressline1);
+	}
+
+	/**
+	 * @return value of AddressLine2
+	 */
+	public final java.lang.String getAddressLine2()
+	{
+		return getAddressLine2(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of AddressLine2
+	 */
+	public final java.lang.String getAddressLine2(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.AddressLine2.toString());
+	}
+
+	/**
+	 * Set value of AddressLine2
+	 * @param addressline2
+	 */
+	public final void setAddressLine2(java.lang.String addressline2)
+	{
+		setAddressLine2(getContext(), addressline2);
+	}
+
+	/**
+	 * Set value of AddressLine2
+	 * @param context
+	 * @param addressline2
+	 */
+	public final void setAddressLine2(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String addressline2)
+	{
+		getMendixObject().setValue(context, MemberNames.AddressLine2.toString(), addressline2);
+	}
+
+	/**
+	 * @return value of AddressLine3
+	 */
+	public final java.lang.String getAddressLine3()
+	{
+		return getAddressLine3(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of AddressLine3
+	 */
+	public final java.lang.String getAddressLine3(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.AddressLine3.toString());
+	}
+
+	/**
+	 * Set value of AddressLine3
+	 * @param addressline3
+	 */
+	public final void setAddressLine3(java.lang.String addressline3)
+	{
+		setAddressLine3(getContext(), addressline3);
+	}
+
+	/**
+	 * Set value of AddressLine3
+	 * @param context
+	 * @param addressline3
+	 */
+	public final void setAddressLine3(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String addressline3)
+	{
+		getMendixObject().setValue(context, MemberNames.AddressLine3.toString(), addressline3);
 	}
 
 	/**

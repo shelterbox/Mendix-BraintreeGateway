@@ -34,16 +34,18 @@ public class CreateTransactionRequest extends CustomJavaAction<java.lang.String>
 	private java.lang.String FirstName;
 	private java.lang.String LastName;
 	private java.lang.String PhoneNumber;
+	private java.lang.String Company;
 	private java.lang.String StreetAddress;
 	private java.lang.String ExtendedAddress;
 	private java.lang.String Locality;
 	private java.lang.String Region;
 	private java.lang.String PostalCode;
+	private java.lang.String CountryCodeNumeric;
 	private java.lang.String CountryCodeAlpha2;
 	private java.lang.String CountryCodeAlpha3;
 	private java.lang.String CountryName;
 
-	public CreateTransactionRequest(IContext context, java.math.BigDecimal Amount, java.lang.String PaymentMethodNonce, java.lang.String DeviceData, java.lang.Boolean SubmitForSettlement, java.lang.String FirstName, java.lang.String LastName, java.lang.String PhoneNumber, java.lang.String StreetAddress, java.lang.String ExtendedAddress, java.lang.String Locality, java.lang.String Region, java.lang.String PostalCode, java.lang.String CountryCodeAlpha2, java.lang.String CountryCodeAlpha3, java.lang.String CountryName)
+	public CreateTransactionRequest(IContext context, java.math.BigDecimal Amount, java.lang.String PaymentMethodNonce, java.lang.String DeviceData, java.lang.Boolean SubmitForSettlement, java.lang.String FirstName, java.lang.String LastName, java.lang.String PhoneNumber, java.lang.String Company, java.lang.String StreetAddress, java.lang.String ExtendedAddress, java.lang.String Locality, java.lang.String Region, java.lang.String PostalCode, java.lang.String CountryCodeNumeric, java.lang.String CountryCodeAlpha2, java.lang.String CountryCodeAlpha3, java.lang.String CountryName)
 	{
 		super(context);
 		this.Amount = Amount;
@@ -53,11 +55,13 @@ public class CreateTransactionRequest extends CustomJavaAction<java.lang.String>
 		this.FirstName = FirstName;
 		this.LastName = LastName;
 		this.PhoneNumber = PhoneNumber;
+		this.Company = Company;
 		this.StreetAddress = StreetAddress;
 		this.ExtendedAddress = ExtendedAddress;
 		this.Locality = Locality;
 		this.Region = Region;
 		this.PostalCode = PostalCode;
+		this.CountryCodeNumeric = CountryCodeNumeric;
 		this.CountryCodeAlpha2 = CountryCodeAlpha2;
 		this.CountryCodeAlpha3 = CountryCodeAlpha3;
 		this.CountryName = CountryName;
@@ -76,11 +80,13 @@ public class CreateTransactionRequest extends CustomJavaAction<java.lang.String>
 					.firstName(this.FirstName)
 					.lastName(this.LastName)
 					.phoneNumber(this.PhoneNumber.replaceAll("[^0-9]", "")) // Replace all non-numeric
+					.company(this.Company)
 					.streetAddress(this.StreetAddress)
 					.extendedAddress(this.ExtendedAddress)
 					.locality(this.Locality)
 					.region(this.Region)
 					.postalCode(this.PostalCode)
+					.countryCodeNumeric(this.CountryCodeNumeric)
 					.countryCodeAlpha2(this.CountryCodeAlpha2)
 					.countryCodeAlpha3(this.CountryCodeAlpha3)
 					.countryName(this.CountryName)

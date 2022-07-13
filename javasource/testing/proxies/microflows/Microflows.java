@@ -38,6 +38,12 @@ public class Microflows
 		Map<java.lang.String, Object> params = new HashMap<>();
 		Core.microflowCall("Testing.AS_Country_Import").withParams(params).execute(context);
 	}
+	public static java.lang.String cALC_Person_ExtendedAddress(IContext context, testing.proxies.Person _person)
+	{
+		Map<java.lang.String, Object> params = new HashMap<>();
+		params.put("Person", _person == null ? null : _person.getMendixObject());
+		return (java.lang.String) Core.microflowCall("Testing.CALC_Person_ExtendedAddress").withParams(params).execute(context);
+	}
 	public static java.util.List<testing.proxies.Configuration> configuration(IContext context)
 	{
 		Map<java.lang.String, Object> params = new HashMap<>();

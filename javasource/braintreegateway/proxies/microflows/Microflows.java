@@ -36,7 +36,7 @@ public class Microflows
 		IMendixObject result = (IMendixObject)Core.microflowCall("BraintreeGateway.SUB_CreateClient").withParams(params).execute(context);
 		return result == null ? null : braintreegateway.proxies.Client.initialize(context, result);
 	}
-	public static braintreegateway.proxies.Transaction sUB_CreateTransaction(IContext context, braintreegateway.proxies.Client _client, java.lang.String _firstName, java.lang.String _lastName, java.lang.String _countryCodeAlpha3, java.lang.String _countryName, java.lang.String _streetAddress, java.lang.String _postalCode, java.lang.String _countryCodeAlpha2, java.lang.String _phoneNumber, java.lang.String _extendedAddress, java.lang.String _locality, java.lang.String _region)
+	public static braintreegateway.proxies.Transaction sUB_CreateTransaction(IContext context, braintreegateway.proxies.Client _client, java.lang.String _firstName, java.lang.String _lastName, java.lang.String _countryCodeAlpha3, java.lang.String _countryName, java.lang.String _streetAddress, java.lang.String _postalCode, java.lang.String _countryCodeAlpha2, java.lang.String _phoneNumber, java.lang.String _extendedAddress, java.lang.String _locality, java.lang.String _region, java.lang.String _countryCodeNumeric, java.lang.String _company)
 	{
 		Map<java.lang.String, Object> params = new HashMap<>();
 		params.put("Client", _client == null ? null : _client.getMendixObject());
@@ -51,6 +51,8 @@ public class Microflows
 		params.put("ExtendedAddress", _extendedAddress);
 		params.put("Locality", _locality);
 		params.put("Region", _region);
+		params.put("CountryCodeNumeric", _countryCodeNumeric);
+		params.put("Company", _company);
 		IMendixObject result = (IMendixObject)Core.microflowCall("BraintreeGateway.SUB_CreateTransaction").withParams(params).execute(context);
 		return result == null ? null : braintreegateway.proxies.Transaction.initialize(context, result);
 	}
